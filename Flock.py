@@ -12,19 +12,24 @@ Flock - The Clock App
 elapsed = 0
 modeSelection = False
 stopwatch = False
+timer = False
 
 while modeSelection == False:
     print("Modes:")
-    print("1. Stopwatch\n")
-    modeOption = input("Choose what mode you want to use corresponding to its number: ")
+    print("1. Stopwatch")
+    print("2. Timer\n")
+    modeOption = input("Choose a Mode (1/2): ")
 
     # This only works in Python 3.10 or above, but in my opinion, it is more efficient
     match modeOption:
         case "1":
             modeSelection = True
             stopwatch = True
+        case "2":
+            modeSelection = True
+            timer = True
         case default:
-            print("\nUse the number in front of the modes to choose the modes.\n")
+            print("\nInvalid Mode\n")
         
 if stopwatch:
     print("\n\n\n")
@@ -41,6 +46,10 @@ while stopwatch:
 
     print(f"Time Elapsed: {':'.join(parsedTime)}")
     
+    
+    
     elapsed += 1
     sleep(1)
     
+while timer:
+    print("?")
